@@ -1,0 +1,5 @@
+#!/bin/bash
+CONN=$1
+DEV=$2
+ssh $1 "parted -s -a optimal /dev/$DEV mklabel gpt -- mkpart primary ext4 0% 100% && mkfs.ext4 /dev/${DEV}1 && mkdir -p /$DEV && mount /dev/${DEV}1 /$DEV && echo /dev/${DEV}1 /${DEV} ext4 defaults 0 0 >>/etc/fstab && echo success"
+

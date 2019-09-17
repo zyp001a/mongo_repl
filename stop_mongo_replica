@@ -1,0 +1,4 @@
+#!/bin/bash
+CONN=$1
+ssh $1 "killall mongod"
+

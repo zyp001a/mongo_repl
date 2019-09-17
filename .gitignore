@@ -22,3 +22,7 @@ __pycache__
 data*/*
 res*/*
 log*/*
+mongodb.conf
+nopasswd_host_list
+start.sh
+stop.sh
