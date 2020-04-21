@@ -8,5 +8,5 @@ IP3=$4
 ssh $USER@$IP1 "echo $IP1 mongo1 >>/etc/hosts && echo $IP2 mongo2 >>/etc/hosts && echo $IP3 mongo3 >>/etc/hosts && echo mongo1 hosts done"
 ssh $USER@$IP2 "echo $IP1 mongo1 >>/etc/hosts && echo $IP2 mongo2 >>/etc/hosts && echo $IP3 mongo3 >>/etc/hosts && echo mongo2 hosts done"
 ssh $USER@$IP3 "echo $IP1 mongo1 >>/etc/hosts && echo $IP2 mongo2 >>/etc/hosts && echo $IP3 mongo3 >>/etc/hosts && echo mongo3 hosts done"
-#ssh $USER@$IP1 'echo "rs.initiate( {_id : \"rs\", members: [{ _id: 0, host: \"mongo1:27017\" },{ _id: 1, host: \"mongo2:27017\" },{ _id: 2, host: \"mongo3:27017\", priority:0, slaveDelay:60*60*24, hidden:true }]})" | mongo --host mongo1'
-
+#ssh $USER@$IP1 'echo "rs.initiate( {_id : \"rs0\", members: [{ _id: 0, host: \"mongo1:27017\" },{ _id: 1, host: \"mongo2:27017\" },{ _id: 2, host: \"mongo3:27017\", priority:0, slaveDelay:60*60*24, hidden:true }]})" | mongo --host mongo1'
+echo "rs.initiate( {_id : \"rs0\", members: [{ _id: 0, host: \"mongo1:27017\" },{ _id: 1, host: \"mongo2:27017\" },{ _id: 2, host: \"mongo3:27017\", priority:0, slaveDelay:60*60*24, hidden:true }, {_id:3, host: \"172.19.168.7:27017\", priority:2}]})"

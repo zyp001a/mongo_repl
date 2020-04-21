@@ -2,5 +2,5 @@
 CONN=$1
 BINDIP=$2
 DIR=$3
-ssh $1 "mkdir -p $DIR/mongodb && mongod --dbpath $DIR/mongodb --replSet rs --bind_ip $BINDIP --fork --logpath $DIR/mongodb.log"
-
+ssh $1 "mkdir -p $DIR/mongodb && mongod --replSet rs --dbpath $DIR/mongodb --bind_ip $BINDIP --fork --logpath $DIR/mongodb.log"
+#--replSet rs
